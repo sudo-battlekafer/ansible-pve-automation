@@ -119,7 +119,7 @@ edit hostname/ip as necessary
 ## vm creation files
 create vm files in variable_files/vms
 
-Using demo1 or demo2 files as reference, create vms with applicable information for the vms you want to create.
+Using examples/demo1 or examples/demo2 files as reference, create vms with applicable information for the vms you want to create.
 
 # VM creation
 
