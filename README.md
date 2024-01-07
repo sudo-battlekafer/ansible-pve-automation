@@ -1,42 +1,6 @@
-## Vaults
+# Vaults
 
-### step 1:
-
-create vaults
-Refer to `API USAGE` below for instruction on how to create user and API token
-
-`ansible-vault create group_vars/pvenodes/vault`
-
-set password
-
-follow example for entries needed
-
-Do the same for `group_vars/all/vault`
-
-## SSH key
-
-You'll need 2 keys.  One for Ansible access, and another for user acces
-
-I suggest using an updated key algorithm with this command (but you do you, boo):
-
-`ssh-keygen -t ed25519`
-
-I created `ansible_id_ed25519` for Ansible usage and `personal_id_ed25519` for my user access
-
-## Var file update
-
-Update `group_vars/all/vars` file with your applicable information.  Do the same with `group_vars/pvenodes/vars`
-
-### all vars
-update ansible_key_file, locale, and timezone at the minimum
-
-### pvenodes vars
-drive_storage and linux_bridge at the minimum require updating 
-
-### group_vars/pvenodes/vms
-Edit group_vars/pvenodes/example_vms (both static and dhcp are used as examples in there), save as group_vars/pvenodes/vms
-
-## API usage
+## step 1:
 
 ### linux user creation
 
@@ -93,7 +57,55 @@ Secret
 
 Enter this information in the group_vars/pvenodes/vault file with the command `ansible-vault edit group_vars/pvenodes/vault`
 
-## VM creation
+## step 2
+
+create vaults
+
+Refer to `API USAGE` below for instruction on how to create user and API token
+
+`ansible-vault create group_vars/pvenodes/vault`
+
+set password as needed
+
+follow example for entries needed
+
+Do the same for `group_vars/all/vault`
+
+## step 3. (optional)
+
+create password vault file so you don't have to type the vault pass everytime
+
+`echo <password to vault(s) >> ~/.vaultpassfile.txt`
+
+then you can run playbooks like this:
+`ansible-playbook -i pvenodes site.yml --vault-password-file=~/.vaultpassfile.txt` and not have to type the password
+
+Use a . in the filename to make it a hidden file in Linux
+
+# SSH key
+
+You'll need 2 keys.  One for Ansible access, and another for user acces
+
+I suggest using an updated key algorithm with this command (but you do you, boo):
+
+`ssh-keygen -t ed25519`
+
+I created `ansible_id_ed25519` for Ansible usage and `personal_id_ed25519` for my user access
+
+# Var file update
+
+Update `group_vars/all/vars` file with your applicable information.  Do the same with `group_vars/pvenodes/vars`
+
+## all vars
+update ansible_key_file, locale, and timezone at the minimum
+
+## pvenodes vars
+drive_storage and linux_bridge at the minimum require updating 
+
+## group_vars/pvenodes/vms
+Edit group_vars/pvenodes/example_vms (both static and dhcp are used as examples in there), save as group_vars/pvenodes/vms
+
+# VM creation
 
 You should be Good 2 Go
 
