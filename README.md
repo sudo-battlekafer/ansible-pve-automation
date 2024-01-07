@@ -105,6 +105,10 @@ drive_storage and linux_bridge at the minimum require updating
 ## group_vars/pvenodes/vms
 Edit group_vars/pvenodes/example_vms (both static and dhcp are used as examples in there), save as group_vars/pvenodes/vms
 
+## inventory file update
+Copy sample-pvenodes to pvenodes
+edit hostname/ip as necessary
+
 # VM creation
 
 You should be Good 2 Go
