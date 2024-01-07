@@ -22,3 +22,14 @@ computers:
     vlan: 10
     ipv4mode: dhcp
     state: new
+
+# dhcp example with vlan  
+  - name: vmtest2
+    vmid: 403
+    node: pve
+    image_file: jammy-server-cloudimg-amd64-disk-kvm.img
+    cores: 4
+    memory: 8192
+    # vlan: 10
+    ipv4mode: dhcp
+    state: new

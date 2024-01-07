@@ -1,3 +1,5 @@
 vault
 40*
 ./pvenodes
+personal/
+5.personal_setup.yml

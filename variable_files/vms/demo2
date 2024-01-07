@@ -1,0 +1,10 @@
+  # example vm with dhcp and vlan tag
+  - name: demo2
+    vmid: 360
+    node: pve
+    image_file: debian-12-generic-amd64.qcow2
+    cores: 8
+    memory: 16384
+    vlan: 10
+    ipv4mode: dhcp
+    state: new

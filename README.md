@@ -68,7 +68,7 @@ Enter this information in the group_vars/pvenodes/vault file with the command `a
 
 create vaults
 
-Refer to API USAGE below for instruction on how to create user and API token
+Refer to API USAGE above for instruction on how to create user and API token
 
 `ansible-vault create group_vars/pvenodes/vault`
 
@@ -115,6 +115,11 @@ Edit group_vars/pvenodes/example_vms (both static and dhcp are used as examples 
 ## inventory file update
 Copy sample-pvenodes to pvenodes
 edit hostname/ip as necessary
+
+## vm creation files
+create vm files in variable_files/vms
+
+Using demo1 or demo2 files as reference, create vms with applicable information for the vms you want to create.
 
 # VM creation
 
