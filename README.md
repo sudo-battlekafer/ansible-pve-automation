@@ -54,13 +54,10 @@ To avoid complications de-select the Privilege Separation option, otherwise weâ€
 
 EXAMPLE:
 
-`Token ID`
-
-`ansible@pam!ansible-token`
-
-`Secret`
-
-`848d5601-a186-4532-9199-bb96e7f33bfa`
+```Token ID
+ansible@pam!ansible-token
+Secret
+848d5601-a186-4532-9199-bb96e7f33bfa```
 
 Enter this information in the group_vars/pvenodes/vault file with the command `ansible-vault edit group_vars/pvenodes/vault`
 
@@ -68,7 +65,7 @@ Enter this information in the group_vars/pvenodes/vault file with the command `a
 
 create vaults
 
-Refer to `API USAGE` below for instruction on how to create user and API token
+Refer to [API USAGE](ansible-pve-automation#api-usage) below for instruction on how to create user and API token
 
 `ansible-vault create group_vars/pvenodes/vault`
 
