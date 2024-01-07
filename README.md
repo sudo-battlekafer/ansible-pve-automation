@@ -68,7 +68,7 @@ Enter this information in the group_vars/pvenodes/vault file with the command `a
 
 create vaults
 
-Refer to [API USAGE](README#api-usage) below for instruction on how to create user and API token
+Refer to API USAGE below for instruction on how to create user and API token
 
 `ansible-vault create group_vars/pvenodes/vault`
 
