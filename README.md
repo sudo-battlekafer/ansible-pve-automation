@@ -42,6 +42,8 @@ For the Role select Administrator
 
 Now click Add
 
+### API Usage
+
 To setup an API token, navigate to Datacentre | Permissions | API Tokens
 
 Click Add and select the Ansible user from the drop down menu
