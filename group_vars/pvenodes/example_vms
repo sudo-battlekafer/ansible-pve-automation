@@ -1,0 +1,24 @@
+computers:
+# static IP example  
+  - name: testmedia
+    vmid: 400 # whatever you want it to be
+    node: pve # whichever node you want 
+    image_file: debian-12-generic-amd64.qcow2 # insert cloud image file of choice
+    cores: 1
+    memory: 1024
+    # vlan: 1
+    ipv4mode: static
+    ipv4_address: 192.168.1.78/24 # for stastic IP
+    ipv4_gateway: 192.168.1.254 # whatever your ipv4 gateway is
+    state: new
+  
+# dhcp example with vlan  
+  - name: vmtest2
+    vmid: 401
+    node: pve2
+    image_file: debian-11-generic-amd64.qcow2
+    cores: 2
+    memory: 2048
+    vlan: 10
+    ipv4mode: dhcp
+    state: new

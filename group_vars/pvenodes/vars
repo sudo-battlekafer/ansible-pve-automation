@@ -1,0 +1,7 @@
+api_host: '{{inventory_hostname}}'
+drive_storage: primary #storage location (local-lvm, etc)
+drive_format: qcow2
+snippets_storage: local
+snippets_path: '/var/lib/vz/snippets/' # default location
+image_storage: local
+linux_bridge: vmbr1 # change this to your VM vmbr

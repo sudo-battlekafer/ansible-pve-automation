@@ -1,0 +1,4 @@
+ansible_user: ansible
+# whatever the machine running ansible's IP is 
+ansible_ip: 192.168.1.46 
+domain_name: '.domain.lan'

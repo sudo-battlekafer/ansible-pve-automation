@@ -1,0 +1,12 @@
+computers:
+  - name: testmedia
+    vmid: 400
+    node: pve
+    image_file: debian-12-generic-amd64.qcow2
+    cores: 1
+    memory: 1024
+    # vlan: 1
+    ipv4mode: static
+    ipv4_address: 10.10.2.201/24
+    ipv4_gateway: 10.10.2.1
+    state: new

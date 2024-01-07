@@ -1,0 +1,11 @@
+os_images:
+  - name: Debian11-Image
+    cloud_init_file: debian-11-generic-amd64.qcow2
+    image_url: 'https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-generic-amd64.qcow2'
+    image_checksum: sha512:ab971a745b5081e7a36df56f589e1c11077c0fbec799f5eb1e57acf17236715df4575aa02118dbcf076cbe372ebe9dedf1d1457b7f5873bdcf08bc5f3ac0233c
+    state: present
+  - name: Debian12-Image
+    cloud_init_file: debian-12-generic-amd64.qcow2
+    image_url: 'https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2'
+    image_checksum: sha512:ad93b29870f370b34b8bbd138b92608ec7a1817ee64d3b4602143dd68713e5e225a7fec0509e98e64ed5d570c27f3a6864e7ab4aa99d7cdfad2158f4b84d364f
+    state: present

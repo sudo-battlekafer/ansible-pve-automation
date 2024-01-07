@@ -1,0 +1,2 @@
+# requires the use of community.general.proxmox.kvm
+- src: community.general

@@ -1,0 +1,9 @@
+ansible_key_file: '~/.ssh/id_ed25519.pub' #your ansible ssh pub key
+image_path: '/var/lib/vz/images/0/'
+project_path: './' #whereever you want the images/files to be, has to exist prior
+timezone: 'America/Chicago' # change to your timezone https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+locale: 'en_US' # change to your locale code https://saimana.com/list-of-country-locale-code/
+group_name: pvenodes
+variable_files:
+ - images
+ - vms
