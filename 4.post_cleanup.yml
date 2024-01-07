@@ -1,0 +1,85 @@
+- hosts: pvenodes
+  become: true
+  gather_facts: false
+  tasks:
+
+  # Remove cloud-init file
+  - name: Remove cloud-init file
+    become: true
+    file:
+      path: '{{snippets_path}}{{item.vmid}}-user.yml'
+      state: absent
+    loop: '{{computers}}'
+    when: 'item.state == "new"'
+    no_log: yes
+
+- hosts: pvenodes[0]
+  become: false
+  gather_facts: false
+  tasks:
+
+  # Stop VMs
+  - name: Stop VMs
+    proxmox_kvm:
+      api_user: '{{api_user}}'
+      api_token_id: '{{api_token_id}}'
+      api_token_secret: '{{api_token_secret}}'
+      api_host: '{{api_host}}'
+      vmid: '{{item.vmid}}'
+      state: 'stopped'
+      timeout: 180
+    loop: '{{computers}}'
+    when: 'item.state == "new"'
+    no_log: yes
+
+  # Remove cloud-init drive
+  - name: Remove cloud-init drive
+    community.general.proxmox_disk:
+      api_user: '{{api_user}}'
+      api_token_id: '{{api_token_id}}'
+      api_token_secret: '{{api_token_secret}}'
+      api_host: '{{api_host}}'
+      vmid: '{{item.vmid}}'
+      disk: 'ide2'
+      state: absent
+    loop: '{{computers}}'
+    when: 'item.state == "new"'
+    no_log: yes
+
+  # Pause before starting VM again
+  # Without a pause the task may indicate it's already started
+  # When that happens, the VM doesn't get started
+  - name: Pause
+    pause:
+      seconds: 30
+
+  # Start VMs
+  - name: Start VMs
+    proxmox_kvm:
+      api_user: '{{api_user}}'
+      api_token_id: '{{api_token_id}}'
+      api_token_secret: '{{api_token_secret}}'
+      api_host: '{{api_host}}'
+      vmid: '{{item.vmid}}'
+      state: 'started'
+    loop: '{{computers}}'
+    when: 'item.state == "new"'
+    no_log: yes
+
+  # Update State
+  - name: Change state
+    replace:
+      path: '{{project_path}}variable_files/vms/{{item.vmid}}.yml'
+      regexp: 'state: new'
+      replace: 'state: present'
+    loop: '{{computers}}'
+    when: 'item.state == "new"'
+    delegate_to: localhost
+    no_log: yes
+
+  # Update Variable File
+  - name: Create Variable Files
+    include_role:
+      name: create_variables_file
+    vars:
+      variable_name: 'vms'
