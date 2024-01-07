@@ -52,13 +52,13 @@ To avoid complications de-select the Privilege Separation option, otherwise weâ€
 
 EXAMPLE:
 
-`Token ID
+`Token ID`
 
-ansible@pam!ansible-token
+`ansible@pam!ansible-token`
 
-Secret
+`Secret`
 
-848d5601-a186-4532-9199-bb96e7f33bfa`
+`848d5601-a186-4532-9199-bb96e7f33bfa`
 
 Enter this information in the group_vars/pvenodes/vault file with the command `ansible-vault edit group_vars/pvenodes/vault`
 
