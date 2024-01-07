@@ -114,3 +114,8 @@ edit hostname/ip as necessary
 You should be Good 2 Go
 
 run with command `ansible-playbook -i pvenodes site.yml --ask-vault-pass`
+
+# Credits
+Huge shout out to Tech Tutorials for setting the ground work.  
+
+https://www.techtutorials.tv/sections/promox/
