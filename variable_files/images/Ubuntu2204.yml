@@ -1,0 +1,5 @@
+  - name: Ubuntu22-Image
+    cloud_init_file: ubuntu-22.04-server-cloudimg-amd64.img
+    image_url: 'https://cloud-images.ubuntu.com/releases/22.04/release/ubuntu-22.04-server-cloudimg-amd64.img'
+    image_checksum: sha512:7fa6aa646d8c8b66d73446839086c7edfe3b55bd21df209f8a7667b7707a876123ff687cf6eeb46b821d8fd2bc39813f1abe63ec1f67b46e57230870c0776599
+    state: present

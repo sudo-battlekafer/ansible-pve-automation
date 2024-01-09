@@ -1,5 +1,9 @@
 # Proxmox Ansible Vm Creation Automation
 
+This playbook automates creation of Debian 11 or 12 virtual machines on Proxmox (test on versions 7.x & 8.1.3).
+
+Testing with Ubuntu 22 has fail thus far, but I'll keep at it.  
+
 ## Vaults
 
 ## step 1:
@@ -91,7 +95,7 @@ Use a . in the filename to make it a hidden file in Linux
 
 # SSH key
 
-You'll need 2 keys.  One for Ansible access, and another for user acces
+You'll need 2 keys.  One for Ansible access, and another for user acces as it's best practice for role seperation
 
 I suggest using an updated key algorithm with this command (but you do you, boo):
 
